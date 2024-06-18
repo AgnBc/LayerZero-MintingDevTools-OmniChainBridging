@@ -4,24 +4,21 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+  branches:
+    include:
+      - main
+  tags:
+    include:
+      - '*'
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - task: mirror-git-repository-vsts-task@1
   inputs:
     sourceGitRepositoryUri: '$(Build.Repository.Uri)'
     sourceGitRepositoryPersonalAccessToken: '$(GITHUB_PAT)'
-    sourceGitRepositoryCloneDirectoryName: 'github.com/AgnBc/LayerZero-MintingDevTools-OmniChainBridging'
-    destinationGitRepositoryUri: 'dev.azure.com/LibraChain/Libra%20-%20DevNet/_git/LayerZero%20-%20MintingDevTools-OmniChainBridging'
+    sourceGitRepositoryCloneDirectoryName: 'https://github.com/AgnBc/LayerZero-MintingDevTools-OmniChainBridging'
+    destinationGitRepositoryUri: 'https://dev.azure.com/LibraChain/Libra%20-%20DevNet/_git/LayerZero%20-%20MintingDevTools-OmniChainBridging'
     destinationGitRepositoryPersonalAccessToken: '$(AZURE_PAT)'
