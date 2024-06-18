@@ -21,5 +21,5 @@ steps:
     sourceGitRepositoryUri: '$(Build.Repository.Uri)'
     sourceGitRepositoryPersonalAccessToken: '$(GITHUB_PAT)'
     sourceGitRepositoryCloneDirectoryName: 'https://github.com/AgnBc/LayerZero-MintingDevTools-OmniChainBridging'
-    destinationGitRepositoryUri: 'https://dev.azure.com/LibraChain/Libra%20-%20DevNet/_git/LayerZero%20-%20MintingDevTools-OmniChainBridging'
+    destinationGitRepositoryUri: 'https://dev.azure.com/LibraChain/GitHub%20-%20Mirrored%20Forks/_git/LayerZero%20-%20MintingDevTools-OmniChainBridging'
     destinationGitRepositoryPersonalAccessToken: '$(AZURE_PAT)'
