@@ -17,3 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: mirror-git-repository-vsts-task@1
+  inputs:
+    sourceGitRepositoryUri: '$(Build.Repository.Uri)'
+    sourceGitRepositoryPersonalAccessToken: '$(GITHUB_PAT)'
+    sourceGitRepositoryCloneDirectoryName: 'https://github.com/AgnBc/LayerZero-MintingDevTools-OmniChainBridging'
+    destinationGitRepositoryUri: 'https://LibraChain@dev.azure.com/LibraChain/Libra%20-%20DevNet/_git/LayerZero%20-%20MintingDevTools-OmniChainBridging'
+    destinationGitRepositoryPersonalAccessToken: '$(AZURE_PAT)'
