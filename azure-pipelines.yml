@@ -13,7 +13,8 @@ trigger:
       - '*'
 
 pool:
-  vmImage: ubuntu-latest
+  # vmImage: ubuntu-latest
+  name: Default
 
 steps:
 - task: mirror-git-repository-vsts-task@1
@@ -21,5 +22,5 @@ steps:
     sourceGitRepositoryUri: '$(Build.Repository.Uri)'
     sourceGitRepositoryPersonalAccessToken: '$(GITHUB_PAT)'
     sourceGitRepositoryCloneDirectoryName: 'https://github.com/AgnBc/LayerZero-MintingDevTools-OmniChainBridging'
-    destinationGitRepositoryUri: 'https://dev.azure.com/LibraChain/GitHub%20-%20Mirrored%20Forks/_git/LayerZero%20-%20MintingDevTools-OmniChainBridging'
+    destinationGitRepositoryUri: 'https://dev.azure.com/AGN0VERSE/GitHub%20-%20Mirrored%20Forks/_git/Blink.LayerZero-MintingDevTools-OmniChainBridging'
     destinationGitRepositoryPersonalAccessToken: '$(AZURE_PAT)'
